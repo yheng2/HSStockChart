@@ -156,8 +156,8 @@ public class HSKLineView: UIView {
         uperFramePath.addLine(to: CGPoint(x: frame.maxX, y: theme.viewMinYGap))
         
         // K线图 内下边线 即最低价格线
-        uperFramePath.move(to: CGPoint(x: 0, y: uperChartHeight - theme.viewMinYGap))
-        uperFramePath.addLine(to: CGPoint(x: frame.maxX, y: uperChartHeight - theme.viewMinYGap))
+//        uperFramePath.move(to: CGPoint(x: 0, y: uperChartHeight - theme.viewMinYGap))
+//        uperFramePath.addLine(to: CGPoint(x: frame.maxX, y: uperChartHeight - theme.viewMinYGap))
         
         // K线图 中间的横线
         uperFramePath.move(to: CGPoint(x: 0, y: uperChartHeight / 2.0))
@@ -173,8 +173,8 @@ public class HSKLineView: UIView {
         let volFramePath = UIBezierPath(rect: CGRect(x: 0, y: uperChartHeight + theme.xAxisHeitht, width: frame.width, height: frame.height - uperChartHeight - theme.xAxisHeitht))
         
         // 交易量图 内上边线 即最高交易量格线
-        volFramePath.move(to: CGPoint(x: 0, y: uperChartHeight + theme.xAxisHeitht + theme.volumeGap))
-        volFramePath.addLine(to: CGPoint(x: frame.maxX, y: uperChartHeight + theme.xAxisHeitht + theme.volumeGap))
+//        volFramePath.move(to: CGPoint(x: 0, y: uperChartHeight + theme.xAxisHeitht + theme.volumeGap))
+//        volFramePath.addLine(to: CGPoint(x: frame.maxX, y: uperChartHeight + theme.xAxisHeitht + theme.volumeGap))
         
         let volFrameLayer = CAShapeLayer()
         volFrameLayer.lineWidth = theme.frameWidth
