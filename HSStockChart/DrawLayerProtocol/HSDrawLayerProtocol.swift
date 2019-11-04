@@ -99,7 +99,7 @@ extension HSDrawLayerProtocol {
         if isLeft {
             labelX = yAxisLabelEdgeInset
         } else {
-            labelX = frame.width - textSize.width - yAxisLabelEdgeInset
+            labelX = frame.width - textSize.width - yAxisLabelEdgeInset - 4
         }
         
         let labelY: CGFloat = y - textSize.height / 2.0
