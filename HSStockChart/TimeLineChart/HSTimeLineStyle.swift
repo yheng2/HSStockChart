@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public struct HSTimeLineStyle {
     var uperChartHeightScale: CGFloat = 0.7 // 70% 的空间是上部分的走势图
@@ -14,7 +15,7 @@ public struct HSTimeLineStyle {
     var lineWidth: CGFloat = 1
     var frameWidth: CGFloat = 0.25
     
-    var xAxisHeitht: CGFloat = 30
+    var xAxisHeitht: CGFloat = 0 // 30
     var viewMinYGap: CGFloat = 15
     var volumeGap: CGFloat = 10
     
