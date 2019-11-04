@@ -7,6 +7,8 @@
 //
 
 //import SwiftyJSON
+import Foundation
+import UIKit
 
 public class HSKLineModel: NSObject {
 

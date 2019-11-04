@@ -360,8 +360,8 @@ public class HSKLine: UIView, HSDrawLayerProtocol {
         linePath.addLine(to: CGPoint(x: xPosition, y: self.frame.height))
         let lineLayer = HSCAShapeLayer()
         lineLayer.path = linePath.cgPath
-        lineLayer.lineWidth = 0.25
-        lineLayer.strokeColor = theme.borderColor.cgColor
+        lineLayer.lineWidth = 3 // 0.25
+        lineLayer.strokeColor = UIColor.red.cgColor //theme.borderColor.cgColor
         lineLayer.fillColor = UIColor.clear.cgColor
         
         let textSize = theme.getTextSize(text: dateString)
