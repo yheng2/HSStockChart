@@ -11,7 +11,7 @@ import UIKit
 
 public struct HSKLineStyle {
     
-    var uperChartHeightScale: CGFloat = 0.85 // 70% 的空间是上部分的走势图
+    var uperChartHeightScale: CGFloat = 0.7 // 70% 的空间是上部分的走势图
     
     var lineWidth: CGFloat = 1
     var frameWidth: CGFloat = 0.25
