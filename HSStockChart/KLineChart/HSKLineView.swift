@@ -105,9 +105,9 @@ public class HSKLineView: UIView {
         // 总长度
         kLineViewWidth = count * theme.candleWidth + (count + 1) * theme.candleGap
         if kLineViewWidth < self.frame.width {
-            kLineViewWidth = self.frame.width
+            kLineViewWidth = self.frame.width + 40
         } else {
-            kLineViewWidth = count * theme.candleWidth + (count + 1) * theme.candleGap
+            kLineViewWidth = count * theme.candleWidth + (count + 1) * theme.candleGap + 40
         }
         
         // 更新view长度
@@ -117,10 +117,10 @@ public class HSKLineView: UIView {
         var contentOffsetX: CGFloat = 0
         
         if scrollView.contentSize.width > 0 {
-            contentOffsetX = kLineViewWidth - scrollView.contentSize.width + 40
+            contentOffsetX = kLineViewWidth - scrollView.contentSize.width
         } else {
             // 首次加载，将 kLine 的右边和scrollview的右边对齐
-            contentOffsetX = kLine.frame.width - scrollView.frame.width + 40
+            contentOffsetX = kLine.frame.width - scrollView.frame.width
         }
         
         scrollView.contentSize = CGSize(width: kLineViewWidth, height: self.frame.height)
