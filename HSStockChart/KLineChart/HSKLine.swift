@@ -370,7 +370,7 @@ public class HSKLine: UIView, HSDrawLayerProtocol {
         var labelY: CGFloat = 0
         let maxX = frame.maxX - textSize.width
         labelX = xPosition - textSize.width / 2.0
-        labelY = self.frame.height - 20 //* theme.uperChartHeightScale
+        labelY = self.frame.height //* theme.uperChartHeightScale
         if labelX > maxX {
             labelX = maxX
         } else if labelX < frame.minX {
