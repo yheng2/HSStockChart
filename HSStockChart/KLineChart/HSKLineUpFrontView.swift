@@ -13,7 +13,9 @@ class HSKLineUpFrontView: UIView, HSDrawLayerProtocol {
     var rrText = CATextLayer()
     var volText = CATextLayer()
     var maxMark = CATextLayer()
+    var secMaxMark = CATextLayer()
     var midMark = CATextLayer()
+    var secMinMark = CATextLayer()
     var minMark = CATextLayer()
     var maxVolMark = CATextLayer()
     var yAxisLayer = CAShapeLayer()
@@ -58,25 +60,37 @@ class HSKLineUpFrontView: UIView, HSDrawLayerProtocol {
         let maxPriceStr = max.hschart.toStringWithFormat(".2")
         let minPriceStr = min.hschart.toStringWithFormat(".2")
         let midPriceStr = ((max + min) / 2).hschart.toStringWithFormat(".2")
-//        let maxVolStr = maxVol.hschart.toStringWithFormat(".2")
+        let secMaxPriceStr = ((max + (max + min) / 2) / 2).hschart.toStringWithFormat(".2")
+        let secMinPriceStr = ((min + (max + min) / 2) / 2).hschart.toStringWithFormat(".2")
         maxMark.string = maxPriceStr
         minMark.string = minPriceStr
         midMark.string = midPriceStr
+        secMaxMark.string = secMaxPriceStr
+        secMinMark.string = secMinPriceStr
+        
+//        let maxVolStr = maxVol.hschart.toStringWithFormat(".2")
 //        maxVolMark.string = maxVolStr
     }
     
     func drawMarkLayer() {
-//        rrText = getYAxisMarkLayer(frame: frame, text: "不复权", y: theme.viewMinYGap, isLeft: true)
-//        volText = getYAxisMarkLayer(frame: frame, text: "成交量", y: lowerChartTop + theme.volumeGap, isLeft: true)
+
         maxMark = getYAxisMarkLayer(frame: frame, text: "0.00", y: theme.viewMinYGap, isLeft: false)
         minMark = getYAxisMarkLayer(frame: frame, text: "0.00", y: uperChartHeight - theme.viewMinYGap, isLeft: false)
         midMark = getYAxisMarkLayer(frame: frame, text: "0.00", y: uperChartHeight / 2, isLeft: false)
-//        maxVolMark = getYAxisMarkLayer(frame: frame, text: "0.00", y: lowerChartTop + theme.volumeGap, isLeft: false)
-//        self.layer.addSublayer(rrText)
-//        self.layer.addSublayer(volText)
+        secMaxMark = getYAxisMarkLayer(frame: frame, text: "0.00", y: uperChartHeight / 4, isLeft: false)
+        secMinMark = getYAxisMarkLayer(frame: frame, text: "0.00", y: uperChartHeight * 3 / 4, isLeft: false)
+        
         self.layer.addSublayer(maxMark)
         self.layer.addSublayer(minMark)
         self.layer.addSublayer(midMark)
+        self.layer.addSublayer(secMinMark)
+        self.layer.addSublayer(secMaxMark)
+        
+//        rrText = getYAxisMarkLayer(frame: frame, text: "不复权", y: theme.viewMinYGap, isLeft: true)
+//        volText = getYAxisMarkLayer(frame: frame, text: "成交量", y: lowerChartTop + theme.volumeGap, isLeft: true)
+//        maxVolMark = getYAxisMarkLayer(frame: frame, text: "0.00", y: lowerChartTop + theme.volumeGap, isLeft: false)
+//        self.layer.addSublayer(rrText)
+//        self.layer.addSublayer(volText)
 //        self.layer.addSublayer(maxVolMark)
     }
     
