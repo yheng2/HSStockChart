@@ -58,11 +58,11 @@ class HSKLineUpFrontView: UIView, HSDrawLayerProtocol {
         let maxPriceStr = max.hschart.toStringWithFormat(".2")
         let minPriceStr = min.hschart.toStringWithFormat(".2")
         let midPriceStr = ((max + min) / 2).hschart.toStringWithFormat(".2")
-        let maxVolStr = maxVol.hschart.toStringWithFormat(".2")
+//        let maxVolStr = maxVol.hschart.toStringWithFormat(".2")
         maxMark.string = maxPriceStr
         minMark.string = minPriceStr
         midMark.string = midPriceStr
-        maxVolMark.string = maxVolStr
+//        maxVolMark.string = maxVolStr
     }
     
     func drawMarkLayer() {

@@ -207,18 +207,18 @@ public class HSTimeLine: UIView, HSDrawLayerProtocol {
         yAxisLayer.addSublayer(getYAxisMarkLayer(frame: frame, text: minPriceStr, y: uperChartDrawAreaBottom, isLeft: false))
         
         // 最高成交量标签及其横线
-        let y = frame.height - maxVolume * volumeUnit
-        let maxVolumeStr = maxVolume.hschart.toStringWithFormat(".2")
+//        let y = frame.height - maxVolume * volumeUnit
+//        let maxVolumeStr = maxVolume.hschart.toStringWithFormat(".2")
 //        yAxisLayer.addSublayer(getYAxisMarkLayer(frame: frame, text: maxVolumeStr, y: y, isLeft: false))
         
-        let maxVolLine = UIBezierPath()
-        maxVolLine.move(to: CGPoint(x: 0, y: y))
-        maxVolLine.addLine(to: CGPoint(x: frame.width, y: y))
-        let maxVolLineLayer = CAShapeLayer()
-        maxVolLineLayer.path = maxVolLine.cgPath
-        maxVolLineLayer.lineWidth = 0.25
-        maxVolLineLayer.strokeColor = theme.borderColor.cgColor
-        maxVolLineLayer.fillColor = UIColor.clear.cgColor
+//        let maxVolLine = UIBezierPath()
+//        maxVolLine.move(to: CGPoint(x: 0, y: y))
+//        maxVolLine.addLine(to: CGPoint(x: frame.width, y: y))
+//        let maxVolLineLayer = CAShapeLayer()
+//        maxVolLineLayer.path = maxVolLine.cgPath
+//        maxVolLineLayer.lineWidth = 0.25
+//        maxVolLineLayer.strokeColor = theme.borderColor.cgColor
+//        maxVolLineLayer.fillColor = UIColor.clear.cgColor
 //        yAxisLayer.addSublayer(maxVolLineLayer)
         
         // 画比率标签
