@@ -61,7 +61,7 @@ public class HSTimeLine: UIView, HSDrawLayerProtocol {
     }
     var lowerChartHeight: CGFloat {
         get {
-            return frame.height * (0.85 - theme.uperChartHeightScale) - theme.xAxisHeitht
+            return frame.height * (1 - theme.uperChartHeightScale) - theme.xAxisHeitht
         }
     }
     var uperChartDrawAreaTop: CGFloat {

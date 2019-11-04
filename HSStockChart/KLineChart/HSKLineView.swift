@@ -54,7 +54,7 @@ public class HSKLineView: UIView {
         
         drawFrameLayer()
         
-        scrollView = UIScrollView(frame: bounds)
+        scrollView = UIScrollView(frame: CGRect(x: bounds.origin.x, y: bounds.origin.y, width: bounds.size.width, height: bounds.size.height - 20))
         scrollView.showsHorizontalScrollIndicator = true
         scrollView.alwaysBounceHorizontal = true
         scrollView.delegate = self
