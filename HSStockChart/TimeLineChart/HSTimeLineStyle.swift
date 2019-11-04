@@ -16,7 +16,7 @@ public struct HSTimeLineStyle {
     var frameWidth: CGFloat = 0.25
     
     var xAxisHeitht: CGFloat = 0 // 30
-    var viewMinYGap: CGFloat = 0 //15
+    var viewMinYGap: CGFloat = 15
     var volumeGap: CGFloat = 10
     
     var ma5Color = UIColor(red: 134/255, green: 149/255, blue: 166/255, alpha: 1)

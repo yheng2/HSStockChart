@@ -17,7 +17,7 @@ public struct HSKLineStyle {
     var frameWidth: CGFloat = 0.25
     
     var xAxisHeitht: CGFloat = 0 //30
-    var viewMinYGap: CGFloat = 0 // 15
+    var viewMinYGap: CGFloat = 15
     var volumeGap: CGFloat = 10
     
     var candleWidth: CGFloat = 5
