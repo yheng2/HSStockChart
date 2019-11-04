@@ -71,13 +71,13 @@ class HSKLineUpFrontView: UIView, HSDrawLayerProtocol {
         maxMark = getYAxisMarkLayer(frame: frame, text: "0.00", y: theme.viewMinYGap, isLeft: false)
         minMark = getYAxisMarkLayer(frame: frame, text: "0.00", y: uperChartHeight - theme.viewMinYGap, isLeft: false)
         midMark = getYAxisMarkLayer(frame: frame, text: "0.00", y: uperChartHeight / 2, isLeft: false)
-        maxVolMark = getYAxisMarkLayer(frame: frame, text: "0.00", y: lowerChartTop + theme.volumeGap, isLeft: false)
+//        maxVolMark = getYAxisMarkLayer(frame: frame, text: "0.00", y: lowerChartTop + theme.volumeGap, isLeft: false)
 //        self.layer.addSublayer(rrText)
 //        self.layer.addSublayer(volText)
         self.layer.addSublayer(maxMark)
         self.layer.addSublayer(minMark)
         self.layer.addSublayer(midMark)
-        self.layer.addSublayer(maxVolMark)
+//        self.layer.addSublayer(maxVolMark)
     }
     
     func drawCrossLine(pricePoint: CGPoint, volumePoint: CGPoint, model: AnyObject?) {
