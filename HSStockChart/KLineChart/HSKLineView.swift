@@ -117,10 +117,10 @@ public class HSKLineView: UIView {
         var contentOffsetX: CGFloat = 0
         
         if scrollView.contentSize.width > 0 {
-            contentOffsetX = kLineViewWidth - scrollView.contentSize.width - 40
+            contentOffsetX = kLineViewWidth - scrollView.contentSize.width + 40
         } else {
             // 首次加载，将 kLine 的右边和scrollview的右边对齐
-            contentOffsetX = kLine.frame.width - scrollView.frame.width - 40
+            contentOffsetX = kLine.frame.width - scrollView.frame.width + 40
         }
         
         scrollView.contentSize = CGSize(width: kLineViewWidth, height: self.frame.height)
