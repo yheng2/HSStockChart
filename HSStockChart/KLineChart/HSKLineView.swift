@@ -39,7 +39,7 @@ public class HSKLineView: UIView {
     
     var uperChartHeight: CGFloat {
         get {
-            return theme.uperChartHeightScale * self.frame.height
+            return theme.uperChartHeightScale * (self.frame.height - theme.bottomHeight)
         }
     }
     var lowerChartTop: CGFloat {

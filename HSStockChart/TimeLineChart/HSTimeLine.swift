@@ -56,12 +56,12 @@ public class HSTimeLine: UIView, HSDrawLayerProtocol {
     
     var uperChartHeight: CGFloat {
         get {
-            return frame.height * theme.uperChartHeightScale
+            return (self.frame.height - theme.bottomHeight) * theme.uperChartHeightScale
         }
     }
     var lowerChartHeight: CGFloat {
         get {
-            return frame.height * (1 - theme.uperChartHeightScale) - theme.xAxisHeitht
+            return (self.frame.height - theme.bottomHeight) * (1 - theme.uperChartHeightScale) - theme.xAxisHeitht
         }
     }
     var uperChartDrawAreaTop: CGFloat {
@@ -350,8 +350,8 @@ public class HSTimeLine: UIView, HSDrawLayerProtocol {
         timeLineLayer.fillColor = UIColor.clear.cgColor
         
         // 填充颜色
-        timeLinePath.addLine(to: CGPoint(x: array.last!.pricePoint.x, y: theme.uperChartHeightScale * frame.height))
-        timeLinePath.addLine(to: CGPoint(x: array[0].pricePoint.x, y: theme.uperChartHeightScale * frame.height))
+        timeLinePath.addLine(to: CGPoint(x: array.last!.pricePoint.x, y: theme.uperChartHeightScale * (self.frame.height - theme.bottomHeight)))
+        timeLinePath.addLine(to: CGPoint(x: array[0].pricePoint.x, y: theme.uperChartHeightScale * (self.frame.height - theme.bottomHeight)))
         fillColorLayer.path = timeLinePath.cgPath
         fillColorLayer.fillColor = theme.fillColor.cgColor
         fillColorLayer.strokeColor = UIColor.clear.cgColor

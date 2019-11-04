@@ -53,12 +53,12 @@ public class HSKLine: UIView, HSDrawLayerProtocol {
     
     var uperChartHeight: CGFloat {
         get {
-            return theme.uperChartHeightScale * self.frame.height
+            return theme.uperChartHeightScale * (self.frame.height - theme.bottomHeight)
         }
     }
     var lowerChartHeight: CGFloat {
         get {
-            return self.frame.height * (1 - theme.uperChartHeightScale) - theme.xAxisHeitht
+            return (self.frame.height - theme.bottomHeight) * (1 - theme.uperChartHeightScale) - theme.xAxisHeitht
         }
     }
     
@@ -192,8 +192,8 @@ public class HSKLine: UIView, HSDrawLayerProtocol {
                 var candleRect = CGRect.zero
                 
                 let volume = (model.volume - 0) * volumeUnit
-                let volumeStartPoint = CGPoint(x: xPosition, y: self.frame.height - volume - 30)
-                let volumeEndPoint = CGPoint(x: xPosition, y: self.frame.height - 30)
+                let volumeStartPoint = CGPoint(x: xPosition, y: self.frame.height - volume - theme.bottomHeight)
+                let volumeEndPoint = CGPoint(x: xPosition, y: self.frame.height - theme.bottomHeight)
                 
                 if(openPointY > closePointY) {
                     fillCandleColor = theme.riseColor
@@ -355,8 +355,8 @@ public class HSKLine: UIView, HSDrawLayerProtocol {
     func drawXaxisTimeMark(xPosition: CGFloat, dateString: String) -> HSCAShapeLayer {
         let linePath = UIBezierPath()
         linePath.move(to: CGPoint(x: xPosition, y: 0))
-        linePath.addLine(to: CGPoint(x: xPosition,  y: self.frame.height * theme.uperChartHeightScale))
-        linePath.move(to: CGPoint(x: xPosition, y: self.frame.height * theme.uperChartHeightScale + theme.xAxisHeitht))
+        linePath.addLine(to: CGPoint(x: xPosition,  y: (self.frame.height - theme.bottomHeight) * theme.uperChartHeightScale))
+        linePath.move(to: CGPoint(x: xPosition, y: (self.frame.height - theme.bottomHeight) * theme.uperChartHeightScale + theme.xAxisHeitht))
         linePath.addLine(to: CGPoint(x: xPosition, y: self.frame.height))
         let lineLayer = HSCAShapeLayer()
         lineLayer.path = linePath.cgPath
@@ -370,7 +370,7 @@ public class HSKLine: UIView, HSDrawLayerProtocol {
         var labelY: CGFloat = 0
         let maxX = frame.maxX - textSize.width
         labelX = xPosition - textSize.width / 2.0
-        labelY = self.frame.height - 20 //* theme.uperChartHeightScale
+        labelY = self.frame.height - theme.bottomHeight + 10 //* theme.uperChartHeightScale
         if labelX > maxX {
             labelX = maxX
         } else if labelX < frame.minX {
