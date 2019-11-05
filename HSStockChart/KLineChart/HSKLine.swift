@@ -262,6 +262,10 @@ public class HSKLine: UIView, HSDrawLayerProtocol {
     
     /// 画交均线图
     func drawMALayer(array: [HSKLineCoordModel]) {
+        if array.isEmpty {
+            return
+        }
+        
         let ma5LinePath = UIBezierPath()
         let ma10LinePath = UIBezierPath()
         let ma20LinePath = UIBezierPath()
