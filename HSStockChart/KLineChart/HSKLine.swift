@@ -316,9 +316,9 @@ public class HSKLine: UIView, HSDrawLayerProtocol {
                 if position.isDrawAxis {
                     switch kLineType {
                     case .kLineForDay, .kLineForWeek, .kLineForMonth:
-                        xAxisTimeMarkLayer.addSublayer(drawXaxisTimeMark(xPosition: position.highPoint.x, dateString: date.hschart.toString("yyyy-MM")))
+                        xAxisTimeMarkLayer.addSublayer(drawXaxisTimeMark(xPosition: position.highPoint.x, dateString: date.hschart.toString("yyyy-MM-dd hh:mm:ss")))
                     default:
-                        xAxisTimeMarkLayer.addSublayer(drawXaxisTimeMark(xPosition: position.highPoint.x, dateString: date.hschart.toString("MM-dd")))
+                        xAxisTimeMarkLayer.addSublayer(drawXaxisTimeMark(xPosition: position.highPoint.x, dateString: date.hschart.toString("yyyy-MM-dd hh:mm:ss")))
                     }
                     lastDate = date
                 }
