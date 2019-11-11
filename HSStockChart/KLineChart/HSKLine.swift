@@ -170,7 +170,7 @@ public class HSKLine: UIView, HSDrawLayerProtocol {
         let maxDiff = self.maxPrice - self.minPrice
         if maxDiff > 0, maxVolume > 0 {
             priceUnit = (uperChartHeight - 2 * minY) / maxDiff
-            volumeUnit = self.maxVolume == CGFloat.leastNormalMagnitude ? 9999999999 : (lowerChartHeight - theme.volumeGap) / self.maxVolume
+            volumeUnit = self.maxVolume == CGFloat.leastNormalMagnitude ? CGFloat.greatestFiniteMagnitude : (lowerChartHeight - theme.volumeGap) / self.maxVolume
         }
         let count = (startIndex + countOfshowCandle + 1) > data.count ? data.count : (startIndex + countOfshowCandle + 1)
         if startIndex < count {
