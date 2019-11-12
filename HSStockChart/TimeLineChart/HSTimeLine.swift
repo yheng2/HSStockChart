@@ -157,7 +157,7 @@ public class HSTimeLine: UIView, HSDrawLayerProtocol {
                 }
                 self.maxPrice = toComparePrice + self.priceMaxOffset
                 self.minPrice = toComparePrice - self.priceMaxOffset
-                self.maxRatio = self.priceMaxOffset / toComparePrice
+                self.maxRatio = toComparePrice == 0 ? 0 : self.priceMaxOffset / toComparePrice
                 self.minRatio = -self.maxRatio
             }
             
