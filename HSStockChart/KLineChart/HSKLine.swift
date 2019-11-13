@@ -172,7 +172,7 @@ public class HSKLine: UIView, HSDrawLayerProtocol {
         let gap = theme.viewMinYGap
         let minY = gap
         let maxDiff = self.maxPrice - self.minPrice
-        if maxDiff > 0, maxVolume > 0 {
+        if maxDiff > 0 && maxVolume > 0 {
             priceUnit = (uperChartHeight - 2 * minY) / maxDiff
             volumeUnit = (self.maxVolume == CGFloat.leastNormalMagnitude || self.maxVolume == 0) ? CGFloat.greatestFiniteMagnitude : ((lowerChartHeight - theme.volumeGap) / self.maxVolume)
         }
