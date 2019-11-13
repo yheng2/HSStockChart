@@ -164,6 +164,10 @@ public class HSKLine: UIView, HSDrawLayerProtocol {
         self.positionModels.removeAll()
         self.klineModels.removeAll()
         
+        if data.isEmpty {
+            return
+        }
+
         let axisGap = countOfshowCandle / 3
         let gap = theme.viewMinYGap
         let minY = gap
